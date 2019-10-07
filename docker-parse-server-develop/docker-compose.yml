@@ -23,11 +23,14 @@ services:
       - PARSE_SERVER_MASTER_KEY=masterkey
       - PARSE_SERVER_DATABASE_URI=mongodb://mongo/test
       - PARSE_SERVER_CLIENT_KEY=clientKey
-      # - PARSE_SERVER_JAVASCRIPT_KEY=javascriptKey
+      - PARSE_SERVER_JAVASCRIPT_KEY=javascriptKey
       - PARSE_SERVER_REST_API_KEY=restAPIKey
-      # - PARSE_SERVER_LIVE_QUERY=liveQuery
+      - PARSE_SERVER_LIVE_QUERY={"classNames":["BME280","BME680","BMP085","BMP280","Device","Error"]}
       # - PORT=1337
-      # - PARSE_SERVER_START_LIVE_QUERY_SERVER=1
+      - PARSE_SERVER_START_LIVE_QUERY_SERVER=1
+      - PARSE_SERVER_MOUNT_GRAPHQL=1
+      - PARSE_SERVER_MOUNT_PLAYGROUND=1
+      #- PARSE_SERVER_CLOUD='/colud/main.js'
     depends_on:
       - mongo
   parse-dashboard:
