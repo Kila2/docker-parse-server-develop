@@ -2,7 +2,7 @@
     "apps": [
         {
             "serverURL": "http://192.168.99.106:8080/parse",
-            "graphQLServerURL": "http://192.168.99.106:1337/graphql",
+            "graphQLServerURL": "http://192.168.99.106:8080/graphql",
             "appId": "appid",
             "masterKey": "masterkey",
             "appName": "",
