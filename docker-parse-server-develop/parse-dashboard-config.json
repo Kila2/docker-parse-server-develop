@@ -1,0 +1,24 @@
+{
+    "apps": [
+        {
+            "serverURL": "http://localhost:8080/parse",
+            "appId": "appid",
+            "masterKey": "masterkey",
+            "appName": "",
+            "iconName": "",
+            "restKey":"restAPIKey"
+        }
+    ],
+    "iconsFolder": "icons",
+    "users": [
+        {
+            "user": "kila",
+            "pass": "kila",
+            "apps": [
+                {
+                    "appId": "appid"
+                }
+            ]
+        }
+    ]
+}
