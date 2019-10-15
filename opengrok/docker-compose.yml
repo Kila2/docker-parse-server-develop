@@ -1,0 +1,19 @@
+version: "3.7"
+
+# More info at https://github.com/oracle/opengrok/docker/
+services:
+  opengrok:
+    container_name: opengrok
+    image: opengrok/docker:1.3.3
+    ports:
+      - "8082:8080/tcp"
+    environment:
+      REINDEX: '60'
+    # Volumes store your data between container upgrades
+    volumes:
+       - '/docker/sourcecode:/opengrok/src/'  # source code
+       - 'opengrok-etc:/opengrok/etc/'  # folder contains configuration.xml
+       - 'opengrok-data:/opengrok/data'  # index and other things for source code
+volumes:
+  opengrok-etc:
+  opengrok-data:
