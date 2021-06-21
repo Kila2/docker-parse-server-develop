@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   mongo:
-    image: mongo:4.2.0
+    image: mongo:4.4.6
     ports:
       - "27017:27017"
     networks:
@@ -12,7 +12,7 @@ services:
       - "parse-db-data:/data/db"
       - "parse-db-data:/data/configdb"
   parse-server:
-    image: parseplatform/parse-server:3.9.0
+    image: parseplatform/parse-server:4.5.0
     ports:
       - "8080:1337"
     networks:
@@ -34,7 +34,7 @@ services:
     depends_on:
       - mongo
   parse-dashboard:
-    image: parseplatform/parse-dashboard:2.0.3
+    image: parseplatform/parse-dashboard:latest
     networks:
       - frontend
     ports:
@@ -42,7 +42,7 @@ services:
     environment:
       - PARSE_DASHBOARD_ALLOW_INSECURE_HTTP=1
     volumes:
-      - //Users/kila/desktop/docker/docker-parse-server-develop/parse-dashboard-config.json:/src/Parse-Dashboard/parse-dashboard-config.json
+      - ./parse-dashboard-config.json:/src/Parse-Dashboard/parse-dashboard-config.json
 
 networks:
   frontend:
